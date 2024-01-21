@@ -6,7 +6,7 @@ import { Outlet } from "react-router-dom";
 export function Index() {
     return (
         <>
-            <div id="main" class="sidebar-mini layout-fixed">
+            <div id="main" className="sidebar-mini layout-fixed">
                 <div className="wrapper container-fluid p-0">
                     {/** navigation */}
                     <Navigation />

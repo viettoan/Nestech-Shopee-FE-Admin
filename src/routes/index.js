@@ -5,6 +5,9 @@ import { Update } from "../modules/users/pages/update";
 import { Index as MainLayout } from "../layouts/main";
 import { Index as Dashboard } from "../modules/dashboard/pages";
 import { Index as IndexProduct } from "../modules/products/pages";
+import { Index as AuthLayout } from "../layouts/auth";
+import { Index as LoginPage } from "../modules/login/pages";
+
 export const router = createBrowserRouter([
     // route cha - cum routes co chung layout = Mainlayout
     {
@@ -35,5 +38,15 @@ export const router = createBrowserRouter([
             }
         ]
     },
-    
+    // route auths
+    {
+        path: '/auth',
+        element: <AuthLayout/>,
+        children: [
+            {
+                path:'login',
+                element: <LoginPage/>
+            }
+        ]
+    }
 ]);

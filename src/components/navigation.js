@@ -1,4 +1,14 @@
+import { useCookies } from "react-cookie";
+
 export function Navigation() {
+    const [cookies, setCookie, removeCookies] = useCookies();
+
+    const logout = (e) => {
+        e.preventDefault();
+        removeCookies('user_token');
+        window.location.href = 'http://localhost:3000/auth/login';
+    }
+
     return (
         <>
             <nav className="main-header navbar navbar-expand-lg navbar-light bg-white">
@@ -90,7 +100,7 @@ export function Navigation() {
                             </a>
                         </li>
                         <li className="nav-item max-3">
-                            <a className="nav-link active text-primary" href="/">Đăng xuất</a>
+                            <a className="nav-link active text-primary" href="/" onClick={e => logout(e)}>Đăng xuất</a>
                         </li>
                     </ul>
                 </div>

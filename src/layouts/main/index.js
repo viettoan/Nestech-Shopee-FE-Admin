@@ -33,7 +33,9 @@ export function Index() {
                     {/** sidebar */}
                     <SideBar />
                     {/** content */}
-                    <Outlet />
+                    <div className="content-wrapper">
+                        <Outlet />
+                    </div>
                     {/** footer */}
                     <Footer />
                 </div>
